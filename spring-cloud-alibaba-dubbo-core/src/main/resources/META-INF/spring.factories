@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.funtl.alibaba.dubbo.core.SpringCloudAlibabaDubboAutoConfiguration
+  cn.nocer.alibaba.dubbo.core.SpringCloudAlibabaDubboAutoConfiguration

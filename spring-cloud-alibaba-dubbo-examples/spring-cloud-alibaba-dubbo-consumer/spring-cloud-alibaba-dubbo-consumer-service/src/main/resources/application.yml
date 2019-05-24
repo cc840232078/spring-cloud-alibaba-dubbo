@@ -18,7 +18,7 @@ dubbo:
   registry:
     address: nacos://192.168.10.146:8848
   scan:
-    basePackages: com.funtl.alibaba.dubbo.consumer.service
+    basePackages: cn.nocer.alibaba.dubbo.consumer.service
 
 management:
   endpoints:

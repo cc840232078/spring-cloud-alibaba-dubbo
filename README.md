@@ -2,7 +2,7 @@
 
 ## 博客
 
-- [Spring Cloud Alibaba Dubbo](http://www.funtl.com/zh/spring-cloud-alibaba-dubbo-vue)
+- [Spring Cloud Alibaba Dubbo](http://www.nocer.cn/zh/spring-cloud-alibaba-dubbo-vue)
 
 ## 目标
 
@@ -10,7 +10,7 @@ Spring Cloud Alibaba Dubbo 项目的目标是将 Dubbo 融入到 Spring Cloud Al
 
 ## Nacos
 
-既然已经将 Dubbo 集成进了 Spring Cloud Alibaba，那么理所当然的我们的注册中心也不再采用 Zookeeper 方案而是转为 Nacos 方案了，部署 Nacos 请参考我的 [**服务注册与发现**](http://www.funtl.com/zh/spring-cloud-alibaba/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0.html) 章节
+既然已经将 Dubbo 集成进了 Spring Cloud Alibaba，那么理所当然的我们的注册中心也不再采用 Zookeeper 方案而是转为 Nacos 方案了，部署 Nacos 请参考我的 [**服务注册与发现**](http://www.nocer.cn/zh/spring-cloud-alibaba/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0.html) 章节
 
 **注：截止到博客发表时间 2019 年 03 月 13 日，Nacos 已发行版为 0.9.0，在 0.8.0 时登录 Nacos 需要使用账号密码，默认账号密码为 nacos/nacos**
 
@@ -29,7 +29,7 @@ Spring Cloud Alibaba Dubbo 项目的目标是将 Dubbo 融入到 Spring Cloud Al
 以 `spring-cloud-alibaba-dubbo-provider-api` 项目中定义的 API 接口为例
 
 ```java
-package com.funtl.alibaba.dubbo.provider.service;
+package cn.nocer.alibaba.dubbo.provider.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,9 +44,9 @@ public interface ProviderService {
 以 `spring-cloud-alibaba-dubbo-provider-service` 项目中实现接口为例
 
 ```java
-package com.funtl.alibaba.dubbo.provider.service.impl;
+package cn.nocer.alibaba.dubbo.provider.service.impl;
 
-import com.funtl.alibaba.dubbo.provider.service.ProviderService;
+import cn.nocer.alibaba.dubbo.provider.service.ProviderService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -118,9 +118,9 @@ public class ProviderServiceImpl implements ProviderService {
 服务消费者需要依赖 `spring-cloud-alibaba-dubbo-provider-api`，并直接使用 `@Autowired` 注解即可实现注入，可以不使用 Dubbo 提供的 `@Reference` 注解
 
 ```java
-package com.funtl.alibaba.dubbo.consumer.service;
+package cn.nocer.alibaba.dubbo.consumer.service;
 
-import com.funtl.alibaba.dubbo.provider.service.ProviderService;
+import cn.nocer.alibaba.dubbo.provider.service.ProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -162,11 +162,11 @@ public class TestService {
 
 ```xml
 <dependency>
-    <groupId>com.funtl</groupId>
+    <groupId>cn.nocer</groupId>
     <artifactId>spring-cloud-alibaba-dubbo-starter</artifactId>
     <exclusions>
         <exclusion>
-            <groupId>com.funtl</groupId>
+            <groupId>cn.nocer</groupId>
             <artifactId>spring-cloud-alibaba-dubbo-core</artifactId>
         </exclusion>
         <exclusion>
